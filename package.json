@@ -1,0 +1,48 @@
+{
+  "name": "dom-testing-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint ./src --fix",
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.10.2",
+    "fake-indexeddb": "^4.0.0",
+    "http-server": "^14.1.1",
+    "regenerator-runtime": "^0.13.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+    "@babel/preset-env": "^7.9.5",
+    "@testing-library/dom": "^7.2.1",
+    "@testing-library/jest-dom": "^5.5.0",
+    "babel-jest": "^25.3.0",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^25.3.0",
+    "jest-canvas-mock": "^2.4.0"
+  },
+  "eslintIgnore": [
+    "*.test.js"
+  ],
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "./src/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>Canvas Gallery</title>
+    <meta
+      name="description"
+      content="Image Gallery that allows you to annotate over the images on a canvas"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/css/fonts.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/css/canvas-gallery.css"
+      type="text/css"
+      media="all"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="canvas-gallery">
+      <div class="header">
+        <h1><span>Canvas</span> Gallery</h1>
+      </div>
+      <div class="container-module hidden">
+        <div class="container-images hide-on-empty hidden">
+          <div class="container-canvas">
+            <canvas class="canvas-image"></canvas>
+            <canvas class="canvas-annotate"></canvas>
+            <canvas class="canvas-draw"></canvas>
+          </div>
+
+          <div class="image-gallery hide-on-empty hidden"></div>
+        </div>
+        <div class="container-info">
+          <div class="container-detail">
+            <div class="block-detail hide-on-empty hidden">
+              <span class="heading-detail"></span>
+            </div>
+            <div class="block-action center-on-empty centered">
+              <div class="message-empty show-on-empty">
+                <h2>No Records Found!</h2>
+                Looks like your gallery is currently empty.<br /><br />Please
+                upload images to the gallery by clicking the button below
+              </div>
+              <div class="image-navigator hide-on-empty hidden">
+                <button class="button-back btn-link">Back</button>
+                <span class="navigator-detail"></span>
+                <button class="button-next btn-link">Next</button>
+              </div>
+              <div class="container-action">
+                <button class="button-delete btn-danger hide-on-empty hidden">
+                  Delete
+                </button>
+
+                <button class="button-upload btn-action">
+                  Upload New Image
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="container-annotation hide-on-empty hidden">
+            <hr />
+            <h2>Tag List</h2>
+            <div class="list-annotation"></div>
+            <button class="button-clear-tags btn-danger">Clear All Tags</button>
+          </div>
+          <div class="container-annotation-empty hide-on-empty hidden">
+            <hr />
+            <h3>No Tags!</h3>
+            There are currently no tags for this image.<br /><br />You can add
+            tags by highlighting an area on the image that you want to tag
+          </div>
+        </div>
+      </div>
+      <div class="loader hidden">Loading...</div>
+      <div class="size-notification hidden">
+        Your screen is too small to view the Canvas Gallery. Please view it on a
+        bigger resolution screen
+      </div>
+    </div>
+
+    <script type="module" src="./src/js/canvasGallery.js"></script>
+  </body>
+</html>
