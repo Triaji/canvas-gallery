@@ -136,8 +136,9 @@ describe('annotate.js', () => {
     done();
   });
 
-  it('should show input field when the text portion of the annotation is touched', (done) => {
+  it('should show input field when the text portion of the annotation is touched 2', (done) => {
     const mockCallbackUpdate = jest.fn();
+    annotate.updateAnnotation = mockCallbackUpdate;
     annotate.inputVisible = false;
     fireEvent.touchStart(annotate.elemDraw, {
       target: annotate.elemDraw,
@@ -157,7 +158,14 @@ describe('annotate.js', () => {
       touches: [{ clientX: 200, clientY: 200 }],
     });
 
-    expect(mockCallbackUpdate).toBeCalled();
+    expect(mockCallbackUpdate).toBeCalledWith({
+      height: 100,
+      selected: false,
+      tag: 'New Tag 1',
+      width: 150,
+      x: 150,
+      y: 150,
+    });
 
     done();
   });

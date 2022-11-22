@@ -21,7 +21,7 @@ export default class Annotate {
         this.elem.parentElement.clientHeight;
     this.width = this.elem.width;
     this.height = this.elem.height;
-    this.ratio = this.width / this.height;
+    this.ratio = 1;
 
     this.inputVisible = false;
     this.annotations = [];
@@ -84,7 +84,7 @@ export default class Annotate {
     document.body.addEventListener(
       'touchstart',
       (e) => {
-        console.log(e.target, self.elemDraw);
+        // console.log(e.target, self.elemDraw);
         if (e.target === self.elemDraw) {
           e.preventDefault();
         }
@@ -155,7 +155,7 @@ export default class Annotate {
   onMouseDown = (e) => {
     const scale = this.width / 450;
 
-    console.log(this.inputVisible, e.clientX, e.clientY);
+    // console.log(this.inputVisible, e.clientX, e.clientY);
     if (!this.inputVisible) {
       this.contextDraw.clearRect(0, 0, this.width, this.height);
 
@@ -175,13 +175,13 @@ export default class Annotate {
         y: this.initialY,
       });
 
-      console.log(
-        this.tagCollided,
-        this.initialX,
-        this.initialY,
-        e.clientX,
-        e.clientY
-      );
+      // console.log(
+      //   this.tagCollided,
+      //   this.initialX,
+      //   this.initialY,
+      //   e.clientX,
+      //   e.clientY
+      // );
 
       if (this.tagCollided > -1) {
         this.updateAnnotationTag(this.annotations[this.tagCollided]);
@@ -261,6 +261,8 @@ export default class Annotate {
   };
 
   onMouseUp = () => {
+    console.log('onMouseUp called');
+
     const scale = 450 / this.width;
 
     if (!this.inputVisible) {
@@ -299,7 +301,7 @@ export default class Annotate {
                 selected: false,
               });
             } else {
-              console.log(w, h);
+              // console.log(w, h);
               if (!isNaN(w)) {
                 alert('Annotation box too small');
               }
@@ -397,6 +399,7 @@ export default class Annotate {
       case 'image': {
         const imageRatio = object.width / object.height;
         const pos = { x: 0, y: 0 };
+        // console.log(imageRatio, self.ratio, this);
         if (self.ratio < imageRatio) {
           const scale = self.width / object.width;
           object.width = self.width;

@@ -47,6 +47,9 @@ import IndexedDB from './utils/indexedDB.js';
 
   const refreshIndex = () => {
     if (storedData.length > 0) {
+      if (selectedIndex === -1) {
+        selectedIndex = 0;
+      }
       const elems = document.querySelectorAll('.hide-on-empty');
       elems.forEach((elem) => elem.classList.remove('hidden'));
 
@@ -203,7 +206,7 @@ import IndexedDB from './utils/indexedDB.js';
     (image) => {
       selectedIndex = image.index;
       imageGallery.elem.scroll({
-        left: imageGallery.elem.children[selectedIndex].offsetLeft - 53,
+        left: imageGallery.elem.children[selectedIndex].offsetLeft - 115,
         top: 0,
         behavior: 'smooth',
       });
@@ -296,7 +299,7 @@ import IndexedDB from './utils/indexedDB.js';
     if (selectedIndex > 0) {
       selectedIndex--;
       imageGallery.elem.scroll({
-        left: imageGallery.elem.children[selectedIndex].offsetLeft - 53,
+        left: imageGallery.elem.children[selectedIndex].offsetLeft - 115,
         top: 0,
         behavior: 'smooth',
       });
@@ -308,7 +311,7 @@ import IndexedDB from './utils/indexedDB.js';
     if (selectedIndex < storedData.length - 1) {
       selectedIndex++;
       imageGallery.elem.scroll({
-        left: imageGallery.elem.children[selectedIndex].offsetLeft - 53,
+        left: imageGallery.elem.children[selectedIndex].offsetLeft - 115,
         top: 0,
         behavior: 'smooth',
       });
